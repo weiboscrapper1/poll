@@ -1,9 +1,9 @@
 CREATE DATABASE IF NOT EXISTS `poll` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS `poll`.`user` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(32) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB, CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `poll`.`poll_history` (
   `subject_id` INT UNSIGNED NOT NULL,
   `sub_item_id` INT UNSIGNED NOT NULL,
   `date` DATETIME NOT NULL,
-  `ip` VARCHAR(39) NOT NULL,
+  `ip` VARCHAR(39),
   INDEX `id_idx` (`user_id` ASC),
   INDEX `id_idx1` (`subject_id` ASC),
   INDEX `id_idx2` (`sub_item_id` ASC),

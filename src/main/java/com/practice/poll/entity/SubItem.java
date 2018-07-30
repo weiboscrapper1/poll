@@ -11,12 +11,12 @@ public class SubItem {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "\"id\"")
-  private Integer id;
-  @Column(name = "\"subject_id\"")
-  private Integer subjectId;
-  @Column(name = "\"description\"")
+  @Column(name = "\"id\"", nullable = false)
+  private Long id;
+  @Column(name = "\"subject_id\"", nullable = false)
+  private Long subjectId;
+  @Column(name = "\"description\"", nullable = false, length = 128)
   private String description;
-  @Column(name = "\"number\"")
-  private Integer number;
+  @Column(name = "\"number\"", nullable = false)
+  private Long number;
 }

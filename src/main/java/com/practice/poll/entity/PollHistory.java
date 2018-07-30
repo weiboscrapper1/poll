@@ -10,16 +10,16 @@ import lombok.Data;
 public class PollHistory {
 
   @Id
-  @Column(name = "\"id\"")
-  private Integer id;
-  @Column(name = "\"user_id\"")
-  private Integer userId;
-  @Column(name = "\"subject_id\"")
-  private Integer subjectId;
-  @Column(name = "\"sub_item_id\"")
+  @Column(name = "\"id\"", nullable = false)
+  private Long id;
+  @Column(name = "\"user_id\"", nullable = false)
+  private Long userId;
+  @Column(name = "\"subject_id\"", nullable = false)
+  private Long subjectId;
+  @Column(name = "\"sub_item_id\"", nullable = false)
   private Integer subItemId;
-  @Column(name = "\"date\"")
+  @Column(name = "\"date\"", nullable = false)
   private Timestamp date;
-  @Column(name = "\"ip\"")
+  @Column(name = "\"ip\"", length = 39)
   private String ip;
 }
