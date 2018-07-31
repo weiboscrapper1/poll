@@ -13,8 +13,11 @@ public class SubItem {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "\"id\"", nullable = false)
   private Long id;
-  @Column(name = "\"subject_id\"", nullable = false)
-  private Long subjectId;
+
+  @ManyToOne
+  @JoinColumn(name = "\"subject_id\"", referencedColumnName = "id", nullable = false)
+  private PollSubject pollSubject;
+
   @Column(name = "\"description\"", nullable = false, length = 128)
   private String description;
   @Column(name = "\"number\"", nullable = false)

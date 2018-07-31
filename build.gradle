@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '2.0.3.RELEASE'
+		lombokVersion = '1.16.20'
 	}
 	repositories {
 		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
@@ -32,7 +33,7 @@ dependencies {
 	compile('mysql:mysql-connector-java')
 	compile('org.springframework.boot:spring-boot-starter-web')
 
-	compileOnly('org.projectlombok:lombok')
+	compileOnly("org.projectlombok:lombok:${lombokVersion}")
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

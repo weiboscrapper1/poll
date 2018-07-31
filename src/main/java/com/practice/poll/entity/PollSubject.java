@@ -7,7 +7,8 @@ import lombok.Data;
 
 @Data
 @Entity(name = "com.practice.entity.PollSubject")
-@Table(name = "poll_subject")
+@Table(name = "poll_subject",
+        indexes = { @Index(name = "idx_poll_subject_user_id", columnList = "user_id ASC")})
 public class PollSubject {
 
     @Id
@@ -15,9 +16,12 @@ public class PollSubject {
     @Column(name = "\"id\"", nullable = false)
     private Long id;
 
-//    @Column(name = "\"user_id\"", nullable = false)
-    @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "user_id", referencedColumnName="id", nullable = false)
+    @ManyToOne(cascade = {CascadeType.DETACH})
+    @JoinColumn(
+            foreignKey = @ForeignKey(name = "fk_poll_subject_user_id"),
+            name = "user_id",
+            referencedColumnName = "id",
+            nullable = false)
     private User user;
 
     @Column(name = "\"subject\"", nullable = false, length = 128)
