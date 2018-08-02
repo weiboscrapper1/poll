@@ -1,4 +1,4 @@
-package com.practice.poll.entity;
+package com.practice.poll.domain;
 
 import java.sql.*;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.persistence.*;
 import lombok.Data;
 
 @Data
-@Entity(name = "com.practice.entity.PollSubject")
+@Entity(name = "com.practice.domain.PollSubject")
 @Table(
         name = "poll_subject",
         indexes = {@Index(name = "idx_poll_subject_user_id", columnList = "user_id ASC")})

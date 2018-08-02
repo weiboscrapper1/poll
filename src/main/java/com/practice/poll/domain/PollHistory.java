@@ -1,11 +1,11 @@
-package com.practice.poll.entity;
+package com.practice.poll.domain;
 
 import java.sql.*;
 import javax.persistence.*;
 import lombok.Data;
 
 @Data
-@Entity(name = "com.practice.entity.PollHistory")
+@Entity(name = "com.practice.domain.PollHistory")
 @Table(name = "poll_history",
         indexes = {
         @Index(name = "idx_poll_history_sub_item_id", columnList = "sub_item_id ASC"),
