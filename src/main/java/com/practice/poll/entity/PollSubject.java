@@ -20,7 +20,7 @@ public class PollSubject {
 
     @ManyToOne(
             cascade = CascadeType.ALL,
-            fetch=FetchType.LAZY)
+            fetch = FetchType.LAZY)
     @JoinColumn(
             foreignKey = @ForeignKey(name = "fk_poll_subject_user_id"),
             name = "user_id",
@@ -32,7 +32,7 @@ public class PollSubject {
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             mappedBy = "pollSubject",
-            fetch=FetchType.LAZY)
+            fetch = FetchType.LAZY)
     private List<SubItem> subItemList;
 
     @Column(name = "\"subject\"", nullable = false, length = 128)
