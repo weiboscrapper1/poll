@@ -9,7 +9,7 @@ import lombok.Data;
 @Table(name = "poll_history",
         indexes = {
         @Index(name = "idx_poll_history_sub_item_id", columnList = "sub_item_id ASC"),
-        @Index(name = "idex_poll_history_subject_id", columnList = "subject_id ASC"),
+        @Index(name = "idx_poll_history_subject_id", columnList = "subject_id ASC"),
         @Index(name = "idx_poll_history_user_id", columnList = "user_id ASC")})
 public class PollHistory {
 
