@@ -49,13 +49,13 @@ CREATE TABLE IF NOT EXISTS `poll`.`poll_history` (
   CONSTRAINT `fk_poll_history_user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `poll`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
   CONSTRAINT `fk_poll_history_subject_id`
     FOREIGN KEY (`subject_id`)
     REFERENCES `poll`.`poll_subject` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
   CONSTRAINT `fk_poll_history_sub_item_id`
     FOREIGN KEY (`sub_item_id`)
     REFERENCES `poll`.`sub_item` (`id`)
